@@ -2,13 +2,13 @@ import BnbLogo from 'src/config/assets/token_bnb.svg'
 import { EnvironmentSettings, ETHEREUM_NETWORK, FEATURES, NetworkConfig, WALLETS } from 'src/config/networks/network.d'
 
 const baseConfig: EnvironmentSettings = {
-  clientGatewayUrl: 'https://safe-client.bsc.gnosis.io/v1',
-  txServiceUrl: 'https://safe-transaction.bsc.gnosis.io/api/v1',
-  safeUrl: 'https://bsc.gnosis-safe.io/app',
-  safeAppsUrl: 'https://safe-apps-bsc.staging.gnosisdev.com',
+  clientGatewayUrl: 'https://gnosis-relay-bsc.chrono.tech/v1',
+  txServiceUrl: 'https://gnosis-tx-bsc.chrono.tech/api/v1',
+  safeAppsUrl: 'https://gnosis-app-bsc.chrono.tech',
+  safeUrl: 'https://gnosis-heco.chrono.tech/app',
   gasPriceOracle: {
-    url: 'https://bscgas.info/gas',
-    gasParameter: 'standard',
+    url: 'https://ethgasstation.info/json/ethgasAPI.json',
+    gasParameter: 'average',
     gweiFactor: '1e9',
   },
   rpcServiceUrl: 'https://bsc-dataseed.binance.org',
@@ -17,7 +17,7 @@ const baseConfig: EnvironmentSettings = {
   networkExplorerApiUrl: 'https://api.bscscan.com/api',
 }
 
-const mainnet: NetworkConfig = {
+const bsc: NetworkConfig = {
   environment: {
     dev: {
       ...baseConfig,
@@ -27,7 +27,6 @@ const mainnet: NetworkConfig = {
     },
     production: {
       ...baseConfig,
-      safeAppsUrl: 'https://apps-bsc.gnosis-safe.io',
     },
   },
   network: {
@@ -62,4 +61,4 @@ const mainnet: NetworkConfig = {
   disabledFeatures: [FEATURES.DOMAIN_LOOKUP, FEATURES.SPENDING_LIMIT],
 }
 
-export default mainnet
+export default bsc

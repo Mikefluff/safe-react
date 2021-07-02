@@ -44,6 +44,7 @@ export enum ETHEREUM_NETWORK {
   KOVAN = 42,
   BSC = 56,
   XDAI = 100,
+  HUOBI = 128,
   ENERGY_WEB_CHAIN = 246,
   LOCAL = 4447,
   VOLTA = 73799,
